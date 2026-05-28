@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Baby ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+  text-align:center;
+  overflow-x: hidden;
+overflow-y: auto;
+}
+
+h1{margin-top:25px;font-size:2.6em}
+
+/* 🎂 CAKE */
+.cake{
+  margin:35px auto 10px;
+  width:220px;
+}
+
+.layer{
+  height:40px;
+  margin:6px auto;
+  border-radius:10px;
+  box-shadow:inset 0 -6px rgba(0,0,0,0.25);
+}
+
+.layer.small{width:130px;background:#4e260b}
+.layer.medium{width:170px;background:#6a3a1a}
+.layer.large{width:220px;background:#8b4a24}
+
+.candle{
+  width:8px;
+  height:32px;
+  background:white;
+  margin:0 auto;
+  border-radius:3px;
+  position:relative;
+}
+
+.flame{
+  width:14px;
+  height:14px;
+  background:orange;
+  border-radius:50%;
+  position:absolute;
+  top:-14px;
+  left:-3px;
+  animation:flicker .8s infinite alternate;
+}
+
+@keyframes flicker{
+  from{transform:scale(1);opacity:.8}
+  to{transform:scale(1.3);opacity:1}
+}
+
+.love-text{
+  margin-top:12px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* 🔘 BUTTONS */
+button{
+  margin:8px;
+  padding:14px 22px;
+  font-size:16px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+  font-weight:bold;
+}
+
+button:hover{transform:scale(1.08)}
+
+.hidden{display:none}
+
+/* 💌 MESSAGE BOX */
+.message-box{
+  margin:25px auto;
+  max-width:80%;
+  font-size:20px;
+  background:rgba(255,255,255,.18);
+  padding:20px;
+  border-radius:20px;
+}
+
+/* 🎊 CONFETTI */
+.confetti{
+  position:fixed;
+  width:8px;
+  height:8px;
+  top:-10px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+
+/* 🎆 FIREWORKS */
+.firework{
+  position:fixed;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  animation:explode 1.5s ease-out forwards;
+}
+
+@keyframes explode{
+  from{transform:scale(0);opacity:1}
+  to{transform:scale(18);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday Baby ❤️😘</h1>
+
+<div class="cake">
+  <div class="candle"><div class="flame"></div></div>
+  <div class="layer small"></div>
+  <div class="layer medium"></div>
+  <div class="layer large"></div>
+</div>
+
+<div class="love-text">
+I loveee youuu babyy jii ❤️❤️😘
+</div>
+
+<button onclick="toggleMsg('special')">💌 Special Message</button>
+<button onclick="toggleMsg('promise')">💍 Future Promise</button>
+<button onclick="whyLove()">📜 Why I Love You</button>
+<button onclick="toggleMsg('meet')">⏳ Until We Meet</button>
+<button onclick="location.reload()">🔁 Replay Surprise</button>
+
+<div id="special" class="hidden message-box">
+    Happiest 19th birthday to the love of my life,my teacher,my favourite person,my bestfriend,my baby jii ,lassi,mommy😋,Yapping queen,cjp ki member,acchi ladkiii,Devi jii,maharani🛐 ❤️❤️😘🎉🥳.<br><br>
+    
+    May God bless youu with all the happiness and strength in your life.  
+    May you get everything you want in your life.<br><br>
+    
+    You are the best girlfriend of the world I'm so happy that I'm in a relationship with youu.  
+    You've been the best thing that can happen to me just aapki presence is the best thing bs umeed krte hai ki hum yha se jeevan bhar aapko ese hi birthdays wish krte rhe ese nhi saath me manye rest birthdays and aao jaipur phir celebrate krenge bs ese hi khush rho hame bhi rehne do ❤️<br><br>
+    
+    and baaki to I loveee youuu the mostt❤️❤️❤️❤️😘😘😘😘🧿🧿  
+    abhi bhi aage bhi krte rhenge ❤️<br><br>
+    
+    and once Again Happy birthday baby 🥳🎉❤️  
+    and party chahiye jaipur me 😌
+    </div>
+
+<div id="promise" class="hidden message-box">
+    💍 <b>Future Promise ❤️</b><br><br>
+    
+    Yashika,<br><br>
+    
+    I promise that I’ll always choose <b>you</b>, no matter what.<br>
+    And yes, one day I will marry youu 🧿❤️<br><br>
+    
+    I promise that after all this long-distance love ,  
+    bakchodi,kalesh,special moments,  
+    and thodi si hawas 😂 
+    ek din hum saath honge, ek hi jagah,is life mein.<br><br>
+    
+    Aapke saath rahenge,  
+    we will make this relationship work,  
+    we will grow together, fight together, laugh together,  
+    and love each other even on the hardest days 🤍<br><br>
+    
+    This is not just a promise,  
+    this is my intention, my effort, and my future —  
+    <b>with you.</b> ❤️
+    </div>
+</div>
+
+<div id="why" class="hidden message-box"></div>
+
+<div id="meet" class="hidden message-box"></div>
+
+<!-- 🎵 MUSIC -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* MESSAGE TOGGLE */
+function toggleMsg(id){
+  document.querySelectorAll('.message-box').forEach(b=>b.classList.add("hidden"));
+  document.getElementById(id).classList.toggle("hidden");
+}
+
+/* 📜 WHY I LOVE YOU */
+const reasons=[
+  "Because you understand me without words ❤️",
+  "Because your smile fixes everything 😘",
+  "Because you feel like home 🏡",
+  "Because loving you feels easy 💖",
+  "Because I choose you every day 💫"
+];
+let r=0;
+function whyLove(){
+  document.querySelectorAll('.message-box').forEach(b=>b.classList.add("hidden"));
+  const box=document.getElementById("why");
+  box.textContent=reasons[r%reasons.length];
+  r++;
+  box.classList.remove("hidden");
+}
+
+/* ⏳ COUNTDOWN */
+function updateCountdown(){
+  const meetDate=new Date("June 16, 2026 00:00:00");
+  const now=new Date();
+  const diff=meetDate-now;
+
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff/(1000*60*60))%24);
+  const m=Math.floor((diff/(1000*60))%60);
+
+  document.getElementById("meet").innerHTML=
+    `Only <b>${d}</b> days <b>${h}</b> hours <b>${m}</b> minutes left<br>until I finally hold you ❤️`;
+}
+setInterval(updateCountdown,1000);
+
+/* 🎊 CONFETTI */
+setInterval(()=>{
+  const c=document.createElement("div");
+  c.className="confetti";
+  c.style.left=Math.random()*100+"vw";
+  c.style.background=`hsl(${Math.random()*360},100%,70%)`;
+  c.style.animationDuration=3+Math.random()*3+"s";
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),6000);
+},120);
+
+/* 🎆 FIREWORKS */
+setInterval(()=>{
+  const f=document.createElement("div");
+  f.className="firework";
+  f.style.left=Math.random()*100+"vw";
+  f.style.top=Math.random()*60+"vh";
+  f.style.background=`hsl(${Math.random()*360},100%,60%)`;
+  document.body.appendChild(f);
+  setTimeout(()=>f.remove(),1500);
+},1000);
+</script>
+
+</body>
+</html>
